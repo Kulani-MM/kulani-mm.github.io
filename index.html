@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khuli Manganyi | Developer Portfolio</title>
+  <title>Kulani Manganyi | Developer Portfolio</title>
   <style>
     :root {
       --bg: #EDE9E3;       /* soft sand */
@@ -20,18 +20,44 @@
       padding: 0;
       color: var(--text);
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--heading);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      transform: scale(1.05);
+    }
+
+    /* Hero */
     header {
       background-color: var(--heading);
       color: white;
-      padding: 60px 20px;
+      padding: 100px 20px;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
 
     header p {
@@ -40,8 +66,27 @@
       opacity: 0.9;
     }
 
+    .cta {
+      margin-top: 20px;
+    }
+
+    .cta a {
+      background-color: var(--accent);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .cta a:hover {
+      background-color: #8B5E3C;
+    }
+
+    /* Sections */
     section {
-      padding: 50px 20px;
+      padding: 60px 20px;
       max-width: 900px;
       margin: auto;
     }
@@ -54,6 +99,7 @@
       padding-bottom: 5px;
     }
 
+    /* Project cards */
     .project {
       background-color: var(--card);
       padding: 20px;
@@ -89,12 +135,7 @@
     }
 
     .links a:hover {
-      background-color: #8B5E3C; /* darker terracotta */
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
+      background-color: #8B5E3C;
     }
 
     footer {
@@ -109,17 +150,30 @@
 </head>
 <body>
 
+<!-- Navigation -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- Hero -->
 <header>
   <h1>Kulani Manganyi</h1>
   <p>Aspiring Software Engineer | Java & Data | Building real-world solutions 🇿🇦</p>
+  <div class="cta">
+    <a href="#projects">View My Work</a>
+  </div>
 </header>
 
-<section>
+<!-- About -->
+<section id="about">
   <h2>About Me</h2>
   <p>I'm a South African developer passionate about using code to solve real problems. Currently exploring Java, cloud technologies, and real-world APIs through meaningful side projects.</p>
 </section>
 
-<section>
+<!-- Projects -->
+<section id="projects">
   <h2>Projects</h2>
 
   <div class="project">
@@ -144,11 +198,10 @@
       <a href="https://github.com/Kulani-MM/Tribute-Page" target="_blank">Source Code</a>
     </div>
   </div>
-
 </section>
 
-
-<section>
+<!-- Contact -->
+<section id="contact">
   <h2>Contact</h2>
   <p>Email: <a href="mailto:manganykulaniy@icloud.com">manganyikulani@icloud.com</a></p>
   <p>GitHub: <a href="https://github.com/Kulani-MM" target="_blank">Kulani-MM</a></p>
