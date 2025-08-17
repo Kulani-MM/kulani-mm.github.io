@@ -9,7 +9,8 @@
       --bg: #EDE9E3;       /* soft sand */
       --card: #D6CFC4;     /* warm taupe */
       --accent: #A67B5B;   /* terracotta */
-      --heading: #5C4033;  /* rich brown */
+      --heading: #333333;  /* modern dark brown */
+      --subtext: #555555;  /* grey for descriptions */
       --text: #1C1C1C;     /* dark charcoal */
     }
 
@@ -63,7 +64,7 @@
     header p {
       margin-top: 10px;
       font-size: 1.2rem;
-      opacity: 0.9;
+      color: var(--subtext);
     }
 
     .cta {
@@ -99,6 +100,10 @@
       padding-bottom: 5px;
     }
 
+    p {
+      color: var(--subtext);
+    }
+
     /* Project cards */
     .project {
       background-color: var(--card);
@@ -106,12 +111,13 @@
       margin: 20px 0;
       border-left: 6px solid var(--accent);
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .project:hover {
       transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.18);
     }
 
     .project h3 {
@@ -131,11 +137,33 @@
       margin-right: 10px;
       text-decoration: none;
       font-size: 0.9rem;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
     .links a:hover {
       background-color: #8B5E3C;
+      transform: scale(1.05);
+    }
+
+    /* Skills */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background-color: var(--accent);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 500;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .skill:hover {
+      background-color: #8B5E3C;
+      transform: scale(1.1);
     }
 
     footer {
@@ -154,6 +182,7 @@
 <nav>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -200,14 +229,6 @@
   </div>
 </section>
 
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:manganykulaniy@icloud.com">manganyikulani@icloud.com</a></p>
-  <p>GitHub: <a href="https://github.com/Kulani-MM" target="_blank">Kulani-MM</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/kulani-manganyi-john-346b0032a/" target="_blank">Kulani Manganyi-John</a></p>
-</section>
-
 <!-- Skills -->
 <section id="skills">
   <h2>Skills</h2>
@@ -222,28 +243,13 @@
   </div>
 </section>
 
-<style>
-  .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .skill {
-    background-color: var(--accent);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: 500;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-  }
-
-  .skill:hover {
-    background-color: #8B5E3C;
-    transform: scale(1.1);
-  }
-</style>
-
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:manganykulaniy@icloud.com">manganyikulani@icloud.com</a></p>
+  <p>GitHub: <a href="https://github.com/Kulani-MM" target="_blank">Kulani-MM</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/kulani-manganyi-john-346b0032a/" target="_blank">Kulani Manganyi-John</a></p>
+</section>
 
 <footer>
   &copy; 2025 Khuli Manganyi. All rights reserved.
