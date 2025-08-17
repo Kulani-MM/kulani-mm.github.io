@@ -3,257 +3,997 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kulani Manganyi | Developer Portfolio</title>
+  <title>Kulani Manganyi | Software Engineer</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
     :root {
-      --bg: #EDE9E3;       /* soft sand */
-      --card: #D6CFC4;     /* warm taupe */
-      --accent: #A67B5B;   /* terracotta */
-      --heading: #333333;  /* modern dark brown */
-      --subtext: #555555;  /* grey for descriptions */
-      --text: #1C1C1C;     /* dark charcoal */
+      --primary-bg: #faf8f6;
+      --secondary-bg: #f5f2ef;
+      --card-bg: #ffffff;
+      --accent: #d4a574;
+      --accent-hover: #c69963;
+      --accent-light: #e8c4a0;
+      --pink-accent: #e8b4b8;
+      --text-primary: #4a3728;
+      --text-secondary: #6b5b4f;
+      --text-muted: #8d7b6f;
+      --border: #e6d7cc;
+      --gradient: linear-gradient(135deg, #d4a574 0%, #e8b4b8 100%);
+      --soft-gradient: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, rgba(232, 180, 184, 0.1) 100%);
+      --shadow: 0 10px 30px -15px rgba(74, 55, 40, 0.1);
+      --shadow-hover: 0 20px 40px -15px rgba(74, 55, 40, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      margin: 0;
-      padding: 0;
-      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--primary-bg);
+      color: var(--text-primary);
       line-height: 1.6;
       scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Animated background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--soft-gradient);
+      pointer-events: none;
+      z-index: -1;
     }
 
     /* Navigation */
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
+      background: rgba(250, 248, 246, 0.95);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
       z-index: 1000;
-      background-color: var(--heading);
-      padding: 12px 20px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s, transform 0.2s;
-    }
-
-    nav a:hover {
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
       color: var(--accent);
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
       transform: scale(1.05);
     }
 
-    /* Hero */
-    header {
-      background-color: var(--heading);
-      color: white;
-      padding: 100px 20px;
-      text-align: center;
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: var(--subtext);
-    }
-
-    .cta {
-      margin-top: 20px;
-    }
-
-    .cta a {
-      background-color: var(--accent);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
+    .nav-links a {
+      color: var(--text-secondary);
       text-decoration: none;
-      font-size: 1rem;
-      transition: background-color 0.2s ease;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
     }
 
-    .cta a:hover {
-      background-color: #8B5E3C;
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--gradient);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(250, 248, 246, 0.85);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 40px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-greeting {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 2rem;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      border: 2px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-pink {
+      border-color: var(--pink-accent);
+      color: var(--pink-accent);
+    }
+
+    .btn-pink:hover {
+      background: var(--pink-accent);
+      color: white;
     }
 
     /* Sections */
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
+    .section {
+      padding: 120px 0;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    h2 {
-      color: var(--heading);
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+      padding: 0 40px;
+    }
+
+    .section-title {
+      font-size: 3rem;
       margin-bottom: 20px;
-      border-bottom: 2px solid var(--accent);
+      position: relative;
       display: inline-block;
-      padding-bottom: 5px;
+      color: var(--text-primary);
     }
 
-    p {
-      color: var(--subtext);
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 60px;
+      height: 3px;
+      background: var(--gradient);
+      transform: translateX(-50%);
+      border-radius: 2px;
     }
 
-    /* Project cards */
-    .project {
-      background-color: var(--card);
-      padding: 20px;
-      margin: 20px 0;
-      border-left: 6px solid var(--accent);
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.12);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    .project:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: 0 40px;
     }
 
-    .project h3 {
-      margin-top: 0;
-      color: var(--heading);
+    .about-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
     }
 
-    .links {
-      margin-top: 10px;
+    .about-text p {
+      margin-bottom: 20px;
     }
 
-    .links a {
-      background-color: var(--accent);
-      color: white;
-      padding: 8px 14px;
-      border-radius: 6px;
-      margin-right: 10px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: background-color 0.2s ease, transform 0.2s ease;
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
     }
 
-    .links a:hover {
-      background-color: #8B5E3C;
-      transform: scale(1.05);
+    .stat-card {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
     }
 
-    /* Skills */
-    .skills-container {
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Resume Section */
+    .resume-section {
+      background: var(--secondary-bg);
+      padding: 120px 0;
+    }
+
+    .resume-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .resume-header {
+      text-align: center;
+      margin-bottom: 60px;
+      padding: 50px;
+      background: var(--card-bg);
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .resume-name {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+
+    .resume-title {
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .resume-contact {
       display: flex;
+      justify-content: center;
+      gap: 30px;
       flex-wrap: wrap;
+      color: var(--text-muted);
+    }
+
+    .resume-contact span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .resume-card {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .resume-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .resume-card h3 {
+      color: var(--accent);
+      margin-bottom: 25px;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
       gap: 12px;
     }
 
-    .skill {
-      background-color: var(--accent);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: 500;
-      transition: transform 0.2s ease, background-color 0.2s ease;
+    .experience-item, .education-item {
+      margin-bottom: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .skill:hover {
-      background-color: #8B5E3C;
-      transform: scale(1.1);
+    .experience-item:last-child, .education-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
+    .job-title {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 5px;
+    }
+
+    .company {
+      color: var(--accent);
+      font-style: italic;
+      margin-bottom: 5px;
+    }
+
+    .date {
+      color: var(--text-muted);
       font-size: 0.9rem;
-      background-color: var(--heading);
+      margin-bottom: 15px;
+    }
+
+    .experience-item ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .experience-item li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+      color: var(--text-secondary);
+    }
+
+    .experience-item li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .skill-group h4 {
+      color: var(--text-primary);
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, var(--accent-light), var(--pink-accent));
+      color: var(--text-primary);
+      padding: 6px 14px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      padding: 0 40px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      padding: 40px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .project-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
       color: white;
-      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .project-links a {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .project-links a:hover {
+      color: var(--accent);
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--text-primary);
+    }
+
+    .project-description {
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .project-features {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+
+    .project-features li {
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-features li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech-tag {
+      background: var(--accent-light);
+      color: var(--text-primary);
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      border: 1px solid var(--border);
+    }
+
+    /* Contact Section */
+    .contact-content {
+      text-align: center;
+      padding: 0 40px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 25px 35px;
+      background: var(--card-bg);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-item:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--secondary-bg);
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        gap: 20px;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .resume-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .resume-contact {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content {
+        padding: 0 20px;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-header {
+        padding: 0 20px;
+      }
+
+      .about-content,
+      .contact-content {
+        padding: 0 20px;
+      }
+
+      .resume-content {
+        padding: 0 20px;
+      }
+
+      .resume-header {
+        padding: 30px 20px;
+      }
     }
   </style>
 </head>
 <body>
-
-<!-- Navigation -->
-<nav>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<!-- Hero -->
-<header>
-  <h1>Kulani Manganyi</h1>
-  <p>Aspiring Software Engineer | Java & Data | Building real-world solutions 🇿🇦</p>
-  <div class="cta">
-    <a href="#projects">View My Work</a>
-  </div>
-</header>
-
-<!-- About -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>I'm a South African developer passionate about using code to solve real problems. Currently exploring Java, cloud technologies, and real-world APIs through meaningful side projects.</p>
-</section>
-
-<!-- Projects -->
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="project">
-    <h3>Mzansi Movie Roulette</h3>
-    <p>A fun, interactive web app that helps users pick a movie at random, inspired by Netflix Roulette. Built with <strong>HTML, CSS, JavaScript</strong>, and deployed on <strong>Netlify</strong>.</p>
-    <ul>
-      <li>🎥 Fetches movies dynamically by genre</li>
-      <li>⭐ Displays ratings & trailers</li>
-      <li>⚡ Sleek, fast, and responsive</li>
-    </ul>
-    <div class="links">
-      <a href="https://mzansi-movie-roulette.netlify.app" target="_blank">Live Demo</a>
-      <a href="https://github.com/Kulani-MM/Movie-Roulette" target="_blank">Source Code</a>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">KM</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </div>
+  </nav>
 
-  <div class="project">
-    <h3>Tribute Page</h3>
-    <p>A clean, beginner-friendly responsive web page built with <strong>HTML & CSS</strong>. Serves as a practice project for layout, typography, and semantic HTML.</p>
-    <div class="links">
-      <a href="https://kulani-mm.github.io/Tribute-Page/" target="_blank">Live Demo</a>
-      <a href="https://github.com/Kulani-MM/Tribute-Page" target="_blank">Source Code</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-greeting">Hello, I'm</div>
+      <h1 class="hero-title">Kulani Manganyi</h1>
+      <h2 class="hero-subtitle">Aspiring Software Engineer</h2>
+      <p class="hero-description">
+        A passionate South African developer with a background in finance, now building my future in software engineering. 
+        I love creating meaningful solutions that solve real-world problems through clean, efficient code.
+      </p>
+      <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-code"></i>
+          View My Work
+        </a>
+        <a href="#resume" class="btn btn-pink">
+          <i class="fas fa-file-alt"></i>
+          See My Resume
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fas fa-envelope"></i>
+          Get In Touch
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Skills -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-container">
-    <div class="skill">Java</div>
-    <div class="skill">Python</div>
-    <div class="skill">SQLite</div>
-    <div class="skill">Javalin</div>
-    <div class="skill">Docker</div>
-    <div class="skill">Git</div>
-    <div class="skill">APIs</div>
-  </div>
-</section>
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="section-header">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        Bridging finance expertise with software engineering passion
+      </p>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Hello! I'm Kulani, a passionate software engineer from Johannesburg, South Africa. My journey began in 
+          finance and accounting, where I developed a keen eye for detail and problem-solving skills that now fuel 
+          my passion for coding.
+        </p>
+        <p>
+          Currently completing my Software Engineering program at WeThinkCode_, I've discovered the power of 
+          technology to transform processes and create meaningful solutions. My background in finance gives me 
+          a unique perspective on building robust, efficient systems.
+        </p>
+        <p>
+          I specialize in Python and Java development, with experience in automation, data reporting, and web 
+          technologies. I'm particularly passionate about clean code, test-driven development, and creating 
+          user-friendly applications.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Years in Finance</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Projects Built</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">7+</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Dedication</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:manganykulaniy@icloud.com">manganyikulani@icloud.com</a></p>
-  <p>GitHub: <a href="https://github.com/Kulani-MM" target="_blank">Kulani-MM</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/kulani-manganyi-john-346b0032a/" target="_blank">Kulani Manganyi-John</a></p>
-</section>
+  <!-- Resume Section -->
+  <section class="resume-section" id="resume">
+    <div class="resume-content">
+      <div class="resume-header">
+        <h2 class="resume-name">Kulani Manganyi</h2>
+        <p class="resume-title">Aspiring Software Engineer</p>
+        <div class="resume-contact">
+          <span><i class="fas fa-map-marker-alt"></i> Johannesburg, South Africa</span>
+          <span><i class="fas fa-envelope"></i> manganyikulani@icloud.com</span>
+          <span><i class="fas fa-phone"></i> 068 482 8372</span>
+          <span><i class="fab fa-github"></i> github.com/Kulani-MM</span>
+        </div>
+      </div>
 
-<footer>
-  &copy; 2025 Khuli Manganyi. All rights reserved.
-</footer>
+      <div class="resume-grid">
+        <!-- Professional Summary -->
+        <div class="resume-card">
+          <h3><i class="fas fa-user"></i> Professional Summary</h3>
+          <p style="color: var(--text-secondary); line-height: 1.7;">
+            A Software Engineering student with a background in finance and accounting and a passion for 
+            problem-solving through code. Strong foundation in Python, Java, and automation tools, 
+            complemented by hands-on experience in data reporting and process improvement. Quick to 
+            learn and adapt, currently completing a rigorous software engineering program at WeThinkCode_. 
+            Seeking a junior developer role to grow in a collaborative and innovative environment.
+          </p>
+        </div>
 
-</body>
-</html>
+        <!-- Technical Skills -->
+        <div class="resume-card">
+          <h3><i class="fas fa-tools"></i> Technical Skills</h3>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h4>Languages</h4>
+              <div class="skill-list">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">VBA</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h4>Development Tools</h4>
+              <div class="skill-list">
+                <span class="skill-tag">Maven</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h4>Concepts</h4>
+              <div class="skill-list">
+                <span class="skill-tag">OOP</span>
+                <span class="skill-tag">TDD</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h4>Data & Automation</h4>
+              <div class="skill-list">
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">RPA</span>
+                <span class="skill-tag">Web Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="resume-card">
+          <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+          
+          <div class="experience-item">
+            <div class="job-title">Banking Administrator</div>
+            <div class="company">Bryte Insurance Company Limited (Contract)</div>
+            <div class="date">Aug 2024 – Sep 2024</div>
+            <ul>
+              <li>Processed banking transactions and resolved discrepancies quickly</li>
+              <li>Collaborated with finance teams to enhance operational efficiency</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Property Accounts Officer</div>
+            <div class="company">Business Partners Limited</div>
+            <div class="date">Sep 2023 – Nov 2023</div>
+            <ul>
+              <li>Managed reconciliations for property portfolios</li>
+              <li>Reduced manual errors by implementing automated templates</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Junior Accounting to Reporting Specialist</div>
+            <div class="company">Epiroc (Contract)</div>
+            <div class="date">Dec 2022 – Sep 2023</div>
+            <ul>
+              <li>Generated detailed financial reports and improved month-end processes</li>
+              <li>Introduced automation to streamline Excel-based reporting</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Accounting to Reporting Intern</div>
+            <div class="company">Epiroc (Internship)</div>
+            <div class="date">Aug 2021 – Jul 2022</div>
+            <ul>
+              <li>Supported reporting processes and created data visualizations using Power BI</li>
+              <li>Learned to translate business requirements into data solutions</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Education & Certifications -->
+        <div class="resume-card">
+          <h3><i class="fas fa-graduation-cap"></i> Education & Certifications</h3>
+          
+          <div class="education-item">
+            <div class="job-title">WeThinkCode_</div>
+            <div class="company">Occupational Certificate in Software Engineering (NQF 6)</div>
+            <div class="date">Expected: Dec 2025</div>
+            <p style="color: var(--text-secondary); margin-top: 10px;">
+              Project-based learning with a focus on problem-solving, clean code, and real-world applications.
+            </p>
+          </div>
+
+          <div class="education-item">
+            <div class="job-title">University of Johannesburg</div>
+            <div class="company">Bachelor of Accounting (NQF 7)</div>
+            <div class="date">Jan 2016 – Dec 2019</div>
+            <p style="color: var(--text-secondary); margin-top: 10px;">
+              Included Informatics and VBA programming components.
+            </p>
+          </div>
+
+          <div class="education-item">
+            <div class="job-title">Responsive Web Design</div>
+            <div class="company">FreeCodeCamp</div>
+            <div class="date">Issued: May 2022</div>
+          </div>
+
+          <div class="education-item">
+            <div class="job-title">Peer Mentor & Bootcamp Mentor</div>
+            <div class="company">WeThinkCode_ (Volunteer)</div>
+            <div class="date">Mar 2025 - Ongoing</div>
+            <p style="color: var(--text-secondary); margin-top: 10px;">
+              Mentoring students on coding fundamentals and guiding prospective students through bootcamp.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div class="
