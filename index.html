@@ -1,91 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khuli Manganyi | Developer Portfolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header {
-            background-color: #222;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-        h1, h2 {
-            margin-bottom: 10px;
-        }
-        .project {
-            background-color: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 5px solid #007acc;
-            box-shadow: 0 0 5px rgba(0,0,0,0.05);
-        }
-        a {
-            color: #007acc;
-            text-decoration: none;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            background-color: #eee;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khuli Manganyi | Developer Portfolio</title>
+  <style>
+    :root {
+      --bg: #EDE9E3;       /* soft sand */
+      --card: #D6CFC4;     /* warm taupe */
+      --accent: #A67B5B;   /* terracotta */
+      --heading: #5C4033;  /* rich brown */
+      --text: #1C1C1C;     /* dark charcoal */
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--heading);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--heading);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .project {
+      background-color: var(--card);
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 6px solid var(--accent);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+    }
+
+    .project h3 {
+      margin-top: 0;
+      color: var(--heading);
+    }
+
+    .links {
+      margin-top: 10px;
+    }
+
+    .links a {
+      background-color: var(--accent);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      margin-right: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .links a:hover {
+      background-color: #8B5E3C; /* darker terracotta */
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background-color: var(--heading);
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>Khuli Manganyi</h1>
-    <p>Aspiring Software Engineer | Java & Cloud | Building real-world solutions 🇿🇦</p>
+  <h1>Khuli Manganyi</h1>
+  <p>Aspiring Software Engineer | Java & Cloud | Building real-world solutions 🇿🇦</p>
 </header>
 
 <section>
-    <h2>About Me</h2>
-    <p>I'm a South African developer passionate about using code to solve real problems. Currently exploring Java, cloud technologies, and real-world APIs through meaningful side projects.</p>
+  <h2>About Me</h2>
+  <p>I'm a South African developer passionate about using code to solve real problems. Currently exploring Java, cloud technologies, and real-world APIs through meaningful side projects.</p>
 </section>
 
 <section>
-    <h2>Projects</h2>
+  <h2>Projects</h2>
 
-    <div class="project">
-        <h3>Yebo Eats</h3>
-        <p>A local-first delivery app concept for townships and peri-urban areas. Focuses on accessibility, mobile-first design, and supporting local vendors.</p>
+  <div class="project">
+    <h3>Mzansi Movie Roulette</h3>
+    <p>A fun, interactive web app that helps users pick a movie at random, inspired by Netflix Roulette. Built with <strong>HTML, CSS, JavaScript</strong>, and deployed on <strong>Netlify</strong>.</p>
+    <ul>
+      <li>🎥 Fetches movies dynamically by genre</li>
+      <li>⭐ Displays ratings & trailers</li>
+      <li>⚡ Sleek, fast, and responsive</li>
+    </ul>
+    <div class="links">
+      <a href="https://mzansi-movie-roulette.netlify.app" target="_blank">Live Demo</a>
+      <a href="https://github.com/Kulani-MM/Movie-Roulette" target="_blank">Source Code</a>
     </div>
+  </div>
 
-    <div class="project">
-        <h3>Mzansi Wellness Tracker</h3>
-        <p>A wellness journal for tracking mood, weight, sleep, and hydration — inspired by South African lifestyles and routines. Coming soon!</p>
-    </div>
+  <div class="project">
+    <h3>Yebo Eats</h3>
+    <p>A local-first delivery app concept for townships and peri-urban areas. Focuses on accessibility, mobile-first design, and supporting local vendors.</p>
+  </div>
 
-    <div class="project">
-        <h3>Loadshedding Calendar</h3>
-        <p>Integrates EskomSePush API to display your load shedding schedule inside your calendar app. Making chaos just a little more predictable.</p>
-    </div>
+  <div class="project">
+    <h3>Mzansi Wellness Tracker</h3>
+    <p>A wellness journal for tracking mood, weight, sleep, and hydration — inspired by South African lifestyles and routines. Coming soon!</p>
+  </div>
+
+  <div class="project">
+    <h3>Loadshedding Calendar</h3>
+    <p>Integrates EskomSePush API to display your load shedding schedule inside your calendar app. Making chaos just a little more predictable.</p>
+  </div>
 
 </section>
 
 <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:manganyimemory@gmail.com">manganyimemory@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/Kulani-MM" target="_blank">Kulani-MM</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/kulani-manganyi/" target="_blank">kulani-manganyi</a></p>
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:manganyimemory@gmail.com">manganyimemory@gmail.com</a></p>
+  <p>GitHub: <a href="https://github.com/Kulani-MM" target="_blank">Kulani-MM</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/kulani-manganyi/" target="_blank">kulani-manganyi</a></p>
 </section>
 
 <footer>
-    &copy; 2025 Khuli Manganyi. All rights reserved.
+  &copy; 2025 Khuli Manganyi. All rights reserved.
 </footer>
 
 </body>
