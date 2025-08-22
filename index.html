@@ -1,216 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kulani Manganyi | Developer Portfolio</title>
-  <style>
-    :root {
-      --bg: #EDE9E3;       /* soft sand */
-      --card: #D6CFC4;     /* warm taupe */
-      --accent: #A67B5B;   /* terracotta */
-      --heading: #5C4033;  /* rich brown */
-      --text: #1C1C1C;     /* dark charcoal */
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      margin: 0;
-      padding: 0;
-      color: var(--text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    /* Navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color: var(--heading);
-      padding: 12px 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s, transform 0.2s;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-      transform: scale(1.05);
-    }
-
-    /* Hero */
-    header {
-      background-color: var(--heading);
-      color: white;
-      padding: 100px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    .cta {
-      margin-top: 20px;
-    }
-
-    .cta a {
-      background-color: var(--accent);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background-color 0.2s ease;
-    }
-
-    .cta a:hover {
-      background-color: #8B5E3C;
-    }
-
-    /* Sections */
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      color: var(--heading);
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    /* Project cards */
-    .project {
-      background-color: var(--card);
-      padding: 20px;
-      margin: 20px 0;
-      border-left: 6px solid var(--accent);
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-4px);
-    }
-
-    .project h3 {
-      margin-top: 0;
-      color: var(--heading);
-    }
-
-    .links {
-      margin-top: 10px;
-    }
-
-    .links a {
-      background-color: var(--accent);
-      color: white;
-      padding: 8px 14px;
-      border-radius: 6px;
-      margin-right: 10px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: background-color 0.2s ease;
-    }
-
-    .links a:hover {
-      background-color: #8B5E3C;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      background-color: var(--heading);
-      color: white;
-      margin-top: 40px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kulani Manganyi | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+<script src="script.js"></script>
+</body>
+</html>
+
 <body>
+  <!-- ===== HERO SECTION ===== -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm <span class="highlight">Kulani</span></h1>
+      <p>Aspiring Software Engineer | Problem Solver | Creator</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </header>
 
-<!-- Navigation -->
-<nav>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a software engineering student at WeThinkCode_, passionate about 
+      building clean, functional, and impactful applications. Currently exploring 
+      data, cloud, and web development.
+    </p>
+  </section>
 
-<!-- Hero -->
-<header>
-  <h1>Kulani Manganyi</h1>
-  <p>Aspiring Software Engineer | Java & Data | Building real-world solutions 🇿🇦</p>
-  <div class="cta">
-    <a href="#projects">View My Work</a>
-  </div>
-</header>
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">Java</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">SQL</div>
+      <div class="skill-card">Docker</div>
+      <div class="skill-card">Linux</div>
+      <div class="skill-card">Git/GitHub</div>
+    </div>
+  </section>
 
-<!-- About -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>I'm a South African developer passionate about using code to solve real problems. Currently exploring Java, cloud technologies, and real-world APIs through meaningful side projects.</p>
-</section>
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <img src="images/weather.png" alt="Weather Analysis" />
+      <h3>South African Weather Analysis</h3>
+      <p>
+        Data visualization project analyzing temperature trends across 
+        South African cities using Python, Pandas, and Plotly Dash.
+      </p>
+      <a href="https://github.com/Kulani-MM/South-African-Weather-Analysis" target="_blank">View on GitHub</a>
+    </div>
+  </section>
 
-<!-- Projects -->
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="project">
-    <h3>Mzansi Movie Roulette</h3>
-    <p>A fun, interactive web app that helps users pick a movie at random, inspired by Netflix Roulette. Built with <strong>HTML, CSS, JavaScript</strong>, and deployed on <strong>Netlify</strong>.</p>
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Let’s connect 👇</p>
     <ul>
-      <li>🎥 Fetches movies dynamically by genre</li>
-      <li>⭐ Displays ratings & trailers</li>
-      <li>⚡ Sleek, fast, and responsive</li>
+      <li><a href="mailto:your-email@example.com">Email</a></li>
+      <li><a href="https://github.com/Kulani-MM" target="_blank">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a></li>
     </ul>
-    <div class="links">
-      <a href="https://mzansi-movie-roulette.netlify.app" target="_blank">Live Demo</a>
-      <a href="https://github.com/Kulani-MM/Movie-Roulette" target="_blank">Source Code</a>
-    </div>
-  </div>
+  </section>
 
-  <div class="project">
-    <h3>Tribute Page</h3>
-    <p>A clean, beginner-friendly responsive web page built with <strong>HTML & CSS</strong>. Serves as a practice project for layout, typography, and semantic HTML.</p>
-    <div class="links">
-      <a href="https://kulani-mm.github.io/Tribute-Page/" target="_blank">Live Demo</a>
-      <a href="https://github.com/Kulani-MM/Tribute-Page" target="_blank">Source Code</a>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:manganykulaniy@icloud.com">manganyikulani@icloud.com</a></p>
-  <p>GitHub: <a href="https://github.com/Kulani-MM" target="_blank">Kulani-MM</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/kulani-manganyi-john-346b0032a/" target="_blank">Kulani Manganyi-John</a></p>
-</section>
-
-<footer>
-  &copy; 2025 Khuli Manganyi. All rights reserved.
-</footer>
-
+  <footer>
+    <p>© 2025 Kulani Manganyi</p>
+  </footer>
 </body>
 </html>
