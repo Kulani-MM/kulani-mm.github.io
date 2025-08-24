@@ -54,15 +54,11 @@ header.scrolled {
    Hero Section
    =========================== */
 .hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(120deg, var(--primary), var(--secondary));
-  color: white;
-  text-align: center;
-  padding: 0 1rem;
+  position: relative;  
+  height: 100vh;       
+  z-index: 1;
 }
+
 
 .hero h1 {
   font-size: 3rem;
