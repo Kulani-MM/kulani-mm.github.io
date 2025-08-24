@@ -56,11 +56,13 @@ header.scrolled {
 
 .hero {
   display: flex;
-  justify-content: center;   
-  align-items: center;       
-  height: 100vh;             
-  text-align: center;        
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically */
+  height: 100vh;             /* full viewport height */
+  text-align: center;        /* center text inside */
 }
+
+
 
 .hero h1 {
   font-size: 3rem;
