@@ -171,6 +171,11 @@ h2 {
   font-weight: bold;
 }
 
+#contact p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
 #contact a:hover {
   color: var(--secondary);
 }
