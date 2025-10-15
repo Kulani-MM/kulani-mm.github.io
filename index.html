@@ -1,91 +1,364 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kulani Manganyi | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/style.css">
 </head>
-<script src="script.js"></script>
-</body>
-</html>
-
 <body>
-  <!-- ===== HERO SECTION ===== -->
-<section class="hero">
-  <div>
-    <h1>hi, there! <span>i'm kulani</span></h1>
-    <p>aspiring software engineer | problem solver | reative</p>
-    <a href="#projects" class="btn">View My Work</a>
+  <div class="container">
+    <!-- Sidebar Profile Card -->
+    <aside class="sidebar">
+      <div class="profile-img">
+        <img src="assets/images/image.png" alt="Kulani Manganyi">
+      </div>
+      <h1 class="profile-name">Kulani Manganyi</h1>
+      <p class="profile-title">Software Developer</p>
+
+      <div class="divider"></div>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <i class="fas fa-envelope icon"></i>
+          <div class="contact-info">
+            <span class="label">EMAIL</span>
+            <a href="mailto:manganyikulani@icloud.com">manganyikulani@icloud.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fas fa-phone icon"></i>
+          <div class="contact-info">
+            <span class="label">PHONE</span>
+            <span>+27 68 482 8372</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt icon"></i>
+          <div class="contact-info">
+            <span class="label">LOCATION</span>
+            <a href="https://www.google.com/maps/place/Johannesburg" target="_blank">Johannesburg, ZA</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/Kulani-MM" target="_blank" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/kulani-mj/" target="_blank" class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:manganyikulani@icloud.com" class="social-link">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Top Navigation Bar -->
+      <nav class="top-navbar">
+        <button class="nav-item active" onclick="showTab('about')">About</button>
+        <button class="nav-item" onclick="showTab('resume')">Resume</button>
+        <button class="nav-item" onclick="showTab('portfolio')">Portfolio</button>
+        <button class="nav-item" onclick="showTab('contact')">Contact</button>
+      </nav>
+
+      <!-- Content Area -->
+      <div class="content-wrapper">
+        <!-- About Tab -->
+        <div id="about" class="tab-content active">
+          <div class="page-header">
+            <h2>About Me</h2>
+            <div class="header-line"></div>
+          </div>
+
+          <div class="about-intro">
+            <h1>hi, there! <span>i'm kulani</span></h1>
+            <p>
+              I grew up in a small village — where routine was safety, and change felt risky. Naturally, I chose Accounting — it was the structured path, the responsible one. And it did teach me discipline and systems thinking.
+            </p>
+            <p>
+              But something in me needed movement. Accounting felt like watching the same day repeat — I wanted to create, not just record.
+            </p>
+            <p>
+              So after just two weeks back in an accounting job, I quit. It was terrifying — I was 27, with no guarantee that tech would welcome me. But I took that leap anyway and joined WeThinkCode_.
+            </p>
+            <p>
+              Here, I found my people — a community that thrived on curiosity and collaboration. I learned to code, but more importantly, I learned to think differently.
+            </p>
+          </div>
+
+          <h3 class="section-heading">What I'm Doing</h3>
+          <div class="services-grid">
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="service-content">
+                <h4>Web Development</h4>
+                <p>High-quality development of sites at the professional level.</p>
+              </div>
+            </div>
+
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="service-content">
+                <h4>Software Engineering</h4>
+                <p>Professional development of applications and systems.</p>
+              </div>
+            </div>
+
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fas fa-palette"></i>
+              </div>
+              <div class="service-content">
+                <h4>UI/UX Design</h4>
+                <p>The most modern and high-quality design made at a professional level.</p>
+              </div>
+            </div>
+
+            <div class="service-box">
+              <div class="service-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <div class="service-content">
+                <h4>Backend Development</h4>
+                <p>High-performance backend services designed for scalability and seamless user experience.</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="section-heading">Skills</h3>
+          <div class="skills-container">
+            <div class="skill-box">
+              <h4>Languages</h4>
+              <div class="skill-tags">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Java</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">VBA</span>
+              </div>
+            </div>
+
+            <div class="skill-box">
+              <h4>Tools & Frameworks</h4>
+              <div class="skill-tags">
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">Maven</span>
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">Javalin</span>
+              </div>
+            </div>
+
+            <div class="skill-box">
+              <h4>Web Technologies</h4>
+              <div class="skill-tags">
+                <span class="skill-badge">HTML5</span>
+                <span class="skill-badge">CSS3</span>
+                <span class="skill-badge">REST APIs</span>
+              </div>
+            </div>
+
+            <div class="skill-box">
+              <h4>Data & Tools</h4>
+              <div class="skill-tags">
+                <span class="skill-badge">Power BI</span>
+                <span class="skill-badge">SQLite</span>
+                <span class="skill-badge">RPA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resume Tab -->
+        <div id="resume" class="tab-content">
+          <div class="page-header">
+            <h2>Resume</h2>
+            <div class="header-line"></div>
+          </div>
+
+          <h3 class="section-heading"><i class="fas fa-briefcase"></i> Experience</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h4>Technical Mentor</h4>
+              <span class="company">WeThinkCode_</span>
+              <span class="period">Sept 2025 – Present</span>
+              <ul>
+                <li>Support onboarding by guiding mentees through environment setup and platform access within the WeThinkCode environment.</li>
+                <li>Provide technical mentorship via code pairing, reviews, and promoting software engineering best practices.</li>
+                <li>Collaborate cross-functionally with the Student Performance team to track student progress, identify blockers, and support skills development initiative.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <h4>Banking Administrator</h4>
+              <span class="company">Bryte Insurance Company Limited</span>
+              <span class="period">Aug 2024 – Sep 2024</span>
+            </div>
+
+            <div class="timeline-item">
+              <h4>Property Accounts Officer</h4>
+              <span class="company">Business Partners Limited</span>
+              <span class="period">Sep 2023 – Nov 2023</span>
+            </div>
+
+            <div class="timeline-item">
+              <h4>Junior Reporting Specialist</h4>
+              <span class="company">Epiroc</span>
+              <span class="period">Dec 2022 – Sep 2023</span>
+            </div>
+
+            <div class="timeline-item">
+              <h4>Accounting Intern</h4>
+              <span class="company">Epiroc</span>
+              <span class="period">Aug 2021 – Jul 2022</span>
+            </div>
+          </div>
+
+          <h3 class="section-heading"><i class="fas fa-graduation-cap"></i> Education</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h4>Occupational Certificate in Software Engineering</h4>
+              <span class="company">WeThinkCode_</span>
+              <span class="period">Expected: Dec 2025</span>
+            </div>
+
+            <div class="timeline-item">
+              <h4>Bachelor of Accounting (NQF 7)</h4>
+              <span class="company">University of Johannesburg</span>
+              <span class="period">Jan 2016 – Dec 2019</span>
+            </div>
+
+            <div class="timeline-item">
+              <h4>Responsive Web Design Certification</h4>
+              <span class="company">FreeCodeCamp</span>
+              <span class="period">May 2022</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Tab -->
+        <div id="portfolio" class="tab-content">
+          <div class="page-header">
+            <h2>Portfolio</h2>
+            <div class="header-line"></div>
+          </div>
+
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fas fa-film"></i>
+              </div>
+              <h3 class="project-title">Mzansi Movie Roulette</h3>
+              <p class="project-desc">
+                An interactive web app that helps users discover movies randomly. Features dynamic 
+                genre filtering, movie ratings, and trailer integration.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">API</span>
+              </div>
+              <div class="project-links">
+                <a href="https://mzansi-movie-roulette.netlify.app" target="_blank" class="project-btn">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="https://github.com/Kulani-MM/Movie-Roulette" target="_blank" class="project-btn">
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3 class="project-title">Tribute Page</h3>
+              <p class="project-desc">
+                A clean, responsive tribute page showcasing modern web development practices with 
+                semantic HTML and professional CSS design.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">Responsive Design</span>
+              </div>
+              <div class="project-links">
+                <a href="https://kulani-mm.github.io/Tribute-Page/" target="_blank" class="project-btn">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="https://github.com/Kulani-MM/Tribute-Page" target="_blank" class="project-btn">
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Tab -->
+        <div id="contact" class="tab-content">
+          <div class="page-header">
+            <h2>Contact</h2>
+            <div class="header-line"></div>
+          </div>
+
+          <div class="contact-intro">
+            <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. Feel free to reach out!</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <div class="contact-icon-box">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h4>Email</h4>
+              <p><a href="mailto:manganyikulani@icloud.com">manganyikulani@icloud.com</a></p>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon-box">
+                <i class="fas fa-phone"></i>
+              </div>
+              <h4>Phone</h4>
+              <p>068 482 8372</p>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon-box">
+                <i class="fab fa-github"></i>
+              </div>
+              <h4>GitHub</h4>
+              <p><a href="https://github.com/Kulani-MM" target="_blank">github.com/Kulani-MM</a></p>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon-box">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <h4>LinkedIn</h4>
+              <p><a href="https://www.linkedin.com/in/kulani-mj/" target="_blank">Kulani Manganyi-John</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
-</section>
 
-
-  <!-- ===== ABOUT ===== -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      i’m a software engineering student at WeThinkCode_, passionate about 
-      building clean, functional, and impactful applications. Currently exploring 
-      data, cloud, and web development.
-    </p>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">Java</div>
-      <div class="skill-card">Python</div>
-      <div class="skill-card">SQL</div>
-      <div class="skill-card">Docker</div>
-      <div class="skill-card">Linux</div>
-      <div class="skill-card">Git/GitHub</div>
-    </div>
-  </section>
-
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <a href="https://sa-weather-dashboard.onrender.com" target="_blank">
-  <img src="images/sa_weather_dashboard.png" alt="Weather Dashboard" />
-</a>
-      <h3>South African Weather Analysis</h3>
-      <p>
-        Data visualization project analyzing temperature trends across 
-        South African cities using <strong>Python, Pandas, and Plotly Dash</strong> and deployed on <strong>Render</strong>.
-      </p>
-      <div class="links">
-        <a href="https://sa-weather-dashboard.onrender.com/" target="_blank">live demo</a>
-      <a href="https://github.com/Kulani-MM/South-African-Weather-Analysis" target="_blank">source code</a>
-    </div>
-      <div class="project-card">
-  <h3>Mzansi Movie Roulette</h3>
-  <p>A fun, interactive web app that helps users pick a movie at random, inspired by Netflix Roulette. Built with <strong>HTML, CSS, JavaScript</strong>, and deployed on <strong>Netlify</strong>.</p>
-  <div class="links">
-    <a href="https://mzansi-movie-roulette.netlify.app" target="_blank">live demo</a>
-    <a href="https://github.com/Kulani-MM/Movie-Roulette" target="_blank">source code</a>
-  </div>
-</div>
-
-  </section>
-
-
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Let’s connect 👇</p>
-    <ul>
-      <li><a href="mailto:manganyikulani@icloud.com">Email</a></li>
-      <li><a href="https://github.com/Kulani-MM" target="_blank">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/kulani-mj/" target="_blank">LinkedIn</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>© 2025 Kulani Manganyi-John</p>
-  </footer>
+  <script src="assets/scripts/script.js"></script>
 </body>
 </html>
