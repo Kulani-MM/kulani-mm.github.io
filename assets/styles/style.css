@@ -20,13 +20,15 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--bg);
   color: var(--text);
-  overflow: hidden;
+  /* Changed overflow: hidden to allow the page to scroll on mobile */
+  overflow-y: scroll;
 }
 
 .container {
-  transition: var(--transition-2);
-  display: flex;
+  /* removed height: 70vh for full scrollability */
   height: 70vh;
+  transition: all 0.3s;
+  display: flex;
   gap: 30px;
   padding: 30px;
   justify-content: center; 
@@ -42,6 +44,7 @@ body {
   flex-direction: column;
   align-items: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  /* Added position: sticky/fixed might be needed if you want it to scroll with main content on desktop */
 }
 
 .profile-img {
@@ -167,7 +170,7 @@ body {
   flex: 1;
   background: var(--content-bg);
   border-radius: 20px;
-  overflow-y: auto; 
+  overflow-y: hidden; /* Changed to hidden since content-wrapper has the scroll */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
@@ -284,12 +287,12 @@ body {
 }
 .about-intro h1 {
   font-size: 2rem;
-  color: black;
+  color: var(--text); /* Use a defined text color */
   margin-bottom: 15px;
 }
 
 .about-intro span {
-  color:#dec224;
+  color: var(--accent); /* Use a defined color variable */
 }
 
 .about-intro p {
@@ -346,62 +349,56 @@ body {
   line-height: 1.6;
 }
 
-/* Tech Stack Grid */
+/* Tech Stack Grid: Restored Horizontal Scroll Layout */
 .tech-stack-grid {
+  /* Key change: Use flex to put items in a single row */
   display: flex;
+  /* Key change: Prevent items from wrapping to the next line */
   flex-wrap: nowrap;
+  
+  /* Key change: Enable horizontal scrolling */
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; 
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  
   max-width: 100%;
-  gap: 15px; 
+  gap: 20px; /* Use the gap you prefer */
   margin-top: 30px;
+  padding-bottom: 10px; /* Added padding to give space for the scroll bar */
 }
 
+/* Hide scrollbar in WebKit (Chrome, Safari) */
 .tech-stack-grid::-webkit-scrollbar {
   display: none;
 }
 
 .tech-logo-item {
+  /* Key change: Prevent items from shrinking, ensuring they keep their size */
   flex-shrink: 0; 
   
+  /* Retained styling for the square boxes */
   background: var(--card-bg);
   padding: 18px; 
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 120px; 
+  width: 120px; /* Define a fixed width for scrollable items */
   aspect-ratio: 1; 
   
-  border: none;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .tech-logo-item:hover {
-  transform: none;
-  box-shadow: none;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .tech-logo-item img {
-  width: 100%;
-  height: 100%;
+  width: 65%;
+  height: 65%;
   object-fit: contain;
-  filter: brightness(1); 
-  transition: filter 0.3s;
-}
-
-.tech-logo-item:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-.tech-logo-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: brightness(1); 
-  transition: filter 0.3s;
 }
 
 
@@ -493,7 +490,7 @@ body {
 
 .download-cv-btn {
     padding: 15px 30px;
-    background: darkgrey;
+    background: var(--accent); /* Changed to use accent variable */
     color: var(--bg);
     text-decoration: none;
     border-radius: 8px;
@@ -517,14 +514,11 @@ body {
 }
 
 
-}
-
 /* --- PORTFOLIO FILTER BAR --- */
 .portfolio-filter {
     display: flex;
     gap: 15px;
     margin-bottom: 40px;
-    /* Allows filtering buttons to wrap on very small screens */
     flex-wrap: wrap; 
 }
 
@@ -553,8 +547,8 @@ body {
 /* --- PROJECTS GRID --- */
 .projects-grid {
     display: grid;
-    /* Creates a responsive 3-column layout */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Min width 220px to fit 3 columns on desktop, 1-2 columns on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
 }
 
@@ -562,9 +556,11 @@ body {
     background: var(--card-bg);
     border-radius: 15px;
     padding: 20px;
-    cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-  
+    /* Link styles */
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .project-card-v2:hover {
@@ -573,7 +569,6 @@ body {
 }
 
 .card-image-placeholder {
-    
     height: 180px; 
     display: flex;
     align-items: center;
@@ -585,7 +580,6 @@ body {
 }
 
 .card-image-placeholder img {
-    
     width: 100%;
     height: 100%;
     object-fit: cover; 
@@ -601,6 +595,12 @@ body {
     font-size: 1.15rem;
     font-weight: 700;
     margin-bottom: 5px;
+    color: var(--text); /* Ensure title is white */
+}
+
+.project-card-v2:hover .card-title {
+    color: var(--accent);
+    transition: color 0.3s;
 }
 
 .card-category {
@@ -691,4 +691,117 @@ body {
 @media (max-width: 650px) {
     .form-row {
         flex-direction: column; 
+    }
+}
+
+/* ========================================================= */
+/* --- 5. MEDIA QUERIES (Mobile/Small Devices) --- */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. LAYOUT RESET */
+    .container {
+        display: block; 
+        padding: 0;
+        /* Allow full height/scrolling on mobile */
+        height: auto; 
+    }
+
+    /* 2. SIDEBAR CHANGES (Moves to the top) */
+    .sidebar {
+        width: 100%; 
+        /* The key change for stacking the sidebar */
+        position: static; 
+        padding: 20px; /* Reduced padding for mobile */
+        border-radius: 0;
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 15px; 
+    }
+
+    .profile-name, .profile-title {
+        text-align: center; 
+    }
+
+    .divider {
+        display: none; /* Hide divider for a cleaner mobile stack */
+    }
+    
+    .contact-details {
+        display: none; /* Hide detailed contacts to save space on mobile */
+    }
+    
+    .social-links {
+        justify-content: center;
+        padding-top: 15px;
+        margin-top: 0;
+    }
+
+
+    /* 3. MAIN CONTENT CHANGES */
+    .main-content {
+        width: 100%; 
+        margin-left: 0; 
+        min-height: auto; /* Allow height to adjust */
+        border-radius: 0; /* Full width content */
+        box-shadow: none;
+    }
+
+    .content-wrapper {
+        padding: 20px; /* Reduced padding for main content area */
+        overflow-y: visible; /* Allow main content to scroll freely */
+    }
+    
+    /* 4. NAVBAR ADJUSTMENTS */
+    .top-navbar {
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start;
+        padding: 15px 20px;
+        margin: 0 -20px 20px; /* Use negative margin to span the full width if needed */
+        border-bottom: none;
+    }
+    
+    .nav-item {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+    }
+
+    /* 5. GRID ADJUSTMENTS */
+    .services-grid {
+        /* Stack service boxes vertically on small screens */
+        grid-template-columns: 1fr; 
+    }
+    
+    .projects-grid {
+        /* Force 1 column on smaller devices for best readability */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    
+    .tech-stack-grid {
+        /* Force 3 columns for tech icons on mobile */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 15px;
+    }
+    
+    /* Contact form inputs stack vertically */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-row input {
+        margin-bottom: 20px;
+    }
+    
+    .send-message-btn {
+        width: 100%;
+        justify-content: center;
+    }
 }
