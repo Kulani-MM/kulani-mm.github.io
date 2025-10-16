@@ -26,7 +26,7 @@ body {
 .container {
   transition: var(--transition-2);
   display: flex;
-  height: 80vh;
+  height: 70vh;
   gap: 30px;
   padding: 30px;
   justify-content: center; 
@@ -167,15 +167,15 @@ body {
   flex: 1;
   background: var(--content-bg);
   border-radius: 20px;
-  overflow-y: auto; /* Change to allow vertical scrolling */
+  overflow-y: auto; 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   max-width: 900px; 
-  min-height: 80vh; /* Set a minimum height for scrolling */
+  min-height: 95vh; 
 }
 
-/* Top Navigation Bar */
+
 .top-navbar {
   background: rgba(29, 29, 31, 0.8);
   backdrop-filter: blur(10px);
@@ -485,6 +485,37 @@ body {
   color: var(--accent);
 }
 
+/* CV Download Section Styling */
+.download-cv-section {
+    text-align: left; 
+    margin: 50px 0 30px; 
+}
+
+.download-cv-btn {
+    padding: 15px 30px;
+    background: darkgrey;
+    color: var(--bg);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4); 
+}
+
+.download-cv-btn:hover {
+    background: #e67e22; 
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(241, 196, 15, 0.5);
+}
+
+.download-cv-btn i {
+    font-size: 1.1rem;
+}
+
 /* Projects */
 .projects-grid {
   display: grid;
@@ -572,42 +603,89 @@ body {
   box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
 }
 
-/* Contact */
-.contact-intro {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 40px;
+/* --- CONTACT TAB STYLING --- */
+
+/* Map Container */
+.contact-map-container {
+    margin-bottom: 40px;
+    border-radius: 15px;
+    overflow: hidden; /* Clips the iframe corners to match the border-radius */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+.contact-map-container iframe {
+    /* Ensures the iframe takes the rounded corners of its parent div */
+    display: block; 
 }
 
-.contact-card {
-  background: var(--card-bg);
-  padding: 35px;
-  border-radius: 15px;
-  text-align: center;
-  border: 1px solid var(--border);
-  transition: all 0.3s;
+/* Contact Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.contact-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-5px);
+.form-row {
+    display: flex;
+    gap: 20px;
 }
 
-.contact-icon-box {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, var(--accent), #e67e22);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--bg);
-  font-size: 1.8rem;
-  margin: 0 auto 20px;
+/* Base styles for all form inputs and textarea */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    background: var(--card-bg); /* Dark background for fields */
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 18px 25px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    width: 100%;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form ::placeholder {
+    color: var(--text-muted);
+    opacity: 1; 
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(241, 196, 15, 0.2);
+}
+
+.contact-form textarea {
+    resize: vertical; 
+}
+
+
+.send-message-btn {
+    align-self: flex-end; 
+    padding: 15px 30px;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
+}
+
+.send-message-btn:hover {
+    background: #e67e22; 
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(241, 196, 15, 0.5);
+}
+
+@media (max-width: 650px) {
+    .form-row {
+        flex-direction: column; 
 }
