@@ -89,7 +89,7 @@ body {
     padding: 25px 20px; 
     border-radius: 12px;
     margin-bottom: 30px;
-    text-align: center;
+    text-align: center; 
     transition: opacity 0.5s ease-in-out, transform 0.3s;
 }
 
@@ -98,11 +98,17 @@ body {
 }
 
 .quote-text-sidebar {
-    font-size: 0.9rem; 
+    font-size: 1 rem; 
     font-style: italic;
     color: var(--text); 
-    line-height: 1.5;
+    line-height: 1.6; 
     margin-bottom: 10px;
+}
+
+.quote-author-sidebar {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent);
 }
 
 .social-links {
@@ -650,110 +656,115 @@ body {
         flex-direction: column; 
     }
 }
-
 /* ========================================================= */
 /* --- 5. MEDIA QUERIES (Mobile/Small Devices) --- */
 /* ========================================================= */
 
 @media (max-width: 768px) {
-    
-    /* 1. LAYOUT RESET */
+
+    /* 1. CONTAINER & BASE LAYOUT */
     .container {
         display: block; 
-        padding: 0;
+        padding: 15px; /* Apply padding back to the main container */
         height: auto; 
     }
 
-    /* 2. SIDEBAR CHANGES (Moves to the top) */
+    /* 2. SIDEBAR CHANGES: UNIFY INTO ONE MOBILE CARD */
     .sidebar {
         width: 100%; 
         position: static; 
-        padding: 20px;
-        border-radius: 0;
+        padding: 0; 
+        background: var(--sidebar-bg); /* Use the sidebar background */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add box shadow back */
+        border-radius: 20px; /* Use the desktop radius for a clean card look */
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px; 
+        gap: 0; /* Remove internal gap, vertical padding will handle spacing */
     }
 
+    /* 3. STICKY PROFILE HEADER */
+    .profile-section-card-mobile {
+        width: 100%;
+        padding: 25px 20px 0; /* Top padding, 0 bottom padding */
+        background: transparent; /* Must be transparent to show sidebar-bg */
+        position: sticky; 
+        top: 0;          
+        z-index: 50;     
+        box-shadow: none; /* No shadow needed here */
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Add a visible border line to separate it from scrolling content */
+        border-bottom: 1px solid var(--border); 
+        margin-bottom: 20px;
+    }
+
+    /* Profile elements need less spacing on mobile */
     .profile-img {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto 15px; 
+        width: 90px;
+        height: 90px;
+        margin-bottom: 15px;
     }
+    .profile-name { margin-bottom: 5px; }
+    .profile-title { margin-bottom: 20px; }
 
-    .profile-name, .profile-title {
-        text-align: center; 
-    }
 
+    /* 4. QUOTE AND SOCIAL LINKS (Inside the Sidebar Card) */
     .divider {
-        display: none;
+        display: none; /* The border-bottom on .profile-section-card-mobile replaces this */
     }
-    
-    .contact-details {
-        display: none;
+
+    .quote-box-sidebar {
+        width: 100%;
+        /* These are the KEY fixes: Remove external visual styles and rely on parent */
+        background: transparent; 
+        border: none; 
+        box-shadow: none;
+        
+        /* Apply vertical padding only */
+        padding: 15px 20px 10px; 
+        margin-bottom: 0; 
     }
     
     .social-links {
+        width: 100%;
+        background: transparent;
+        box-shadow: none;
         justify-content: center;
-        padding-top: 15px;
-        margin-top: 0;
+        padding: 20px; /* Padding for the bottom section */
     }
 
 
-    /* 3. MAIN CONTENT CHANGES */
+    /* 5. MAIN CONTENT CHANGES: Stacks below sidebar */
     .main-content {
         width: 100%; 
         margin-left: 0; 
         min-height: auto; 
-        border-radius: 0;
-        box-shadow: none;
+        border-radius: 20px; /* Match the sidebar radius */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
     .content-wrapper {
-        padding: 20px; /* Reduced padding for main content area */
-        overflow-y: visible; /* Allow main content to scroll freely */
+        padding: 25px; 
+        overflow-y: visible; 
     }
     
-    /* 4. NAVBAR ADJUSTMENTS */
+    /* 6. NAVBAR & GRID ADJUSTMENTS */
     .top-navbar {
         overflow-x: auto;
         white-space: nowrap;
         justify-content: flex-start;
-        padding: 15px 20px;
-        margin: 0 -20px 20px;
-        border-bottom: none;
-    }
-    
-    .nav-item {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-        flex-shrink: 0;
+        padding: 15px 25px;
+        margin: -25px -25px 20px; 
+        border-radius: 15px 15px 0 0;
     }
 
-    /* 5. GRID ADJUSTMENTS */
-    .services-grid {
-        grid-template-columns: 1fr; 
-    }
-    
-    .projects-grid {
+    .services-grid, .projects-grid {
         grid-template-columns: 1fr; 
         gap: 20px;
-    }
-    
-    .tech-stack-grid {
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 15px;
-    }
-    
-    /* Contact form inputs stack vertically */
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .form-row input {
-        margin-bottom: 20px;
-    }
-    
-    .send-message-btn {
-        width: 100%;
-        justify-content: center;
     }
 }
