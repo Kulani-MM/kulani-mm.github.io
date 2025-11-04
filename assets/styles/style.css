@@ -235,7 +235,7 @@ body {
 }
 
 .page-header h2 {
-  font-size: 2.8rem;
+  font-size: 2rem;
   color: var(--text);
   margin-bottom: 15px;
 }
@@ -248,7 +248,7 @@ body {
 }
 
 .section-heading {
-  font-size: 1.8rem;
+  font-size: 1.rem;
   color: var(--text);
   margin: 40px 0 25px;
 }
@@ -260,7 +260,7 @@ body {
   margin-bottom: 50px;
 }
 .about-intro h1 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: var(--text); 
   margin-bottom: 15px;
 }
@@ -307,7 +307,7 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--accent);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   flex-shrink: 0;
 }
 
@@ -408,7 +408,7 @@ body {
 }
 
 .timeline-item h4 {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: var(--text);
   margin-bottom: 8px;
 }
