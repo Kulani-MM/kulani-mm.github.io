@@ -27,6 +27,11 @@ const quotes = [
     author: "Steve Jobs",
   },
   {
+    quote:
+      "We must all suffer one of two things: the pain of discipline or the pain of regret.",
+    author: "Jim Rohn",
+  },
+  {
     quote: "Don't watch the clock; do what it does. Keep going.",
     author: "Sam Levenson",
   },
