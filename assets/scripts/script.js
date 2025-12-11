@@ -65,7 +65,7 @@ function getQuoteIndexBasedOnTime() {
   return intervalCount % totalQuotes;
 }
 
-function updateQuote(containerId, textClass, authorClass) {
+function updateQuote(containerId, textClass, authorClass, skipAnimation = false) {
   const quoteContainer = document.getElementById(containerId);
   if (!quoteContainer) return;
 
@@ -77,26 +77,83 @@ function updateQuote(containerId, textClass, authorClass) {
   const index = getQuoteIndexBasedOnTime();
   const currentQuote = quotes[index];
 
-  quoteContainer.style.opacity = 0;
-
-  setTimeout(() => {
-    quoteTextElement.textContent = `“${currentQuote.quote}”`;
+  if (skipAnimation) {
+    quoteTextElement.textContent = `"${currentQuote.quote}"`;
     quoteAuthorElement.textContent = `- ${currentQuote.author}`;
-    quoteContainer.style.opacity = 1;
-  }, 500);
+  } else {
+    quoteContainer.style.opacity = 0;
+
+    setTimeout(() => {
+      quoteTextElement.textContent = `"${currentQuote.quote}"`;
+      quoteAuthorElement.textContent = `- ${currentQuote.author}`;
+      quoteContainer.style.opacity = 1;
+    }, 500);
+  }
 }
 
-function updateAllQuotes() {
-  updateQuote("quote-section", ".quote-text", ".quote-author");
+function updateAllQuotes(skipAnimation = false) {
+  updateQuote("quote-section", ".quote-text", ".quote-author", skipAnimation);
   updateQuote(
     "quote-section-sidebar",
     ".quote-text-sidebar",
-    ".quote-author-sidebar"
+    ".quote-author-sidebar",
+    skipAnimation
   );
+}
+
+// Portfolio filter functionality
+function initPortfolioFilters() {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card-v2");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filterValue = button.getAttribute("data-filter");
+
+      // Update active button
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      // Filter projects
+      projectCards.forEach((card) => {
+        if (filterValue === "all") {
+          card.style.display = "block";
+        } else {
+          const cardCategory = card.getAttribute("data-category");
+          card.style.display = cardCategory === filterValue ? "block" : "none";
+        }
+      });
+    });
+  });
+}
+
+// Form submission handling
+function initContactForm() {
+  const form = document.getElementById("contactForm");
+  const submitBtn = document.getElementById("submitBtn");
+
+  if (form && submitBtn) {
+    form.addEventListener("submit", () => {
+      const btnText = submitBtn.querySelector(".btn-text");
+      const btnLoading = submitBtn.querySelector(".btn-loading");
+      const btnIcon = submitBtn.querySelector(".fa-paper-plane");
+
+      if (btnText && btnLoading && btnIcon) {
+        btnText.style.display = "none";
+        btnIcon.style.display = "none";
+        btnLoading.style.display = "inline";
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.7";
+        submitBtn.style.cursor = "not-allowed";
+      }
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   showTab("about");
-  updateAllQuotes();
+  updateAllQuotes(true); // Skip animation on initial load
   setInterval(updateAllQuotes, 60000);
+  initPortfolioFilters();
+  initContactForm();
 });

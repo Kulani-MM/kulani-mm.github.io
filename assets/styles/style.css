@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg: #1a1a1d;
   --sidebar-bg: #1e1e1f;
@@ -24,12 +28,12 @@ body {
 }
 
 .container {
-  height: 70vh;
+  min-height: 100vh;
   transition: all 0.3s;
   display: flex;
   gap: 30px;
   padding: 30px;
-  justify-content: center; 
+  justify-content: center;
 }
 
 /* ===== SIDEBAR ===== */
@@ -98,10 +102,10 @@ body {
 }
 
 .quote-text-sidebar {
-    font-size: 1 rem; 
+    font-size: 1rem;
     font-style: italic;
-    color: var(--text); 
-    line-height: 1.6; 
+    color: var(--text);
+    line-height: 1.6;
     margin-bottom: 10px;
 }
 
@@ -248,7 +252,7 @@ body {
 }
 
 .section-heading {
-  font-size: 1.rem;
+  font-size: 1.5rem;
   color: var(--text);
   margin: 40px 0 25px;
 }
@@ -646,9 +650,15 @@ body {
 }
 
 .send-message-btn:hover {
-    background: #e67e22; 
+    background: #e67e22;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(241, 196, 15, 0.5);
+}
+
+.send-message-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
 }
 
 @media (max-width: 650px) {
@@ -664,93 +674,117 @@ body {
 
     /* 1. CONTAINER & BASE LAYOUT */
     .container {
-        display: block; 
-        padding: 15px; /* Apply padding back to the main container */
-        height: auto; 
+        display: block;
+        padding: 15px;
+        min-height: 100vh;
     }
 
     /* 2. SIDEBAR CHANGES: UNIFY INTO ONE MOBILE CARD */
     .sidebar {
-        width: 100%; 
-        position: static; 
-        padding: 0; 
-        background: var(--sidebar-bg); /* Use the sidebar background */
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add box shadow back */
-        border-radius: 20px; /* Use the desktop radius for a clean card look */
-        
+        width: 100%;
+        position: static;
+        padding: 20px;
+        background: var(--sidebar-bg);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 20px; 
-        gap: 0; /* Remove internal gap, vertical padding will handle spacing */
+        margin-bottom: 20px;
+        gap: 0;
     }
 
-    /* 3. STICKY PROFILE HEADER */
+    /* 3. PROFILE SECTION */
     .profile-section-card-mobile {
         width: 100%;
-        padding: 25px 20px 0; /* Top padding, 0 bottom padding */
-        background: transparent; /* Must be transparent to show sidebar-bg */
-        position: sticky; 
-        top: 0;          
-        z-index: 50;     
-        box-shadow: none; /* No shadow needed here */
-        
+        padding: 0;
+        background: transparent;
+
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* Add a visible border line to separate it from scrolling content */
-        border-bottom: 1px solid var(--border); 
-        margin-bottom: 20px;
     }
 
-    /* Profile elements need less spacing on mobile */
+    /* Profile elements optimized for mobile */
     .profile-img {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
         margin-bottom: 15px;
     }
-    .profile-name { margin-bottom: 5px; }
-    .profile-title { margin-bottom: 20px; }
+    .profile-name {
+        margin-bottom: 5px;
+        font-size: 1.3rem;
+    }
+    .profile-title {
+        margin-bottom: 15px;
+        font-size: 0.85rem;
+    }
 
 
-    /* 4. QUOTE AND SOCIAL LINKS (Inside the Sidebar Card) */
+    /* 4. QUOTE AND SOCIAL LINKS */
     .divider {
-        display: none; /* The border-bottom on .profile-section-card-mobile replaces this */
+        margin: 15px 0;
     }
 
     .quote-box-sidebar {
         width: 100%;
-        /* These are the KEY fixes: Remove external visual styles and rely on parent */
-        background: transparent; 
-        border: none; 
-        box-shadow: none;
-        
-        /* Apply vertical padding only */
-        padding: 15px 20px 10px; 
-        margin-bottom: 0; 
+        padding: 15px;
+        margin-bottom: 15px;
     }
-    
+
+    .quote-text-sidebar {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .quote-author-sidebar {
+        font-size: 0.75rem;
+    }
+
     .social-links {
         width: 100%;
-        background: transparent;
-        box-shadow: none;
         justify-content: center;
-        padding: 20px; /* Padding for the bottom section */
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
     }
 
 
-    /* 5. MAIN CONTENT CHANGES: Stacks below sidebar */
+    /* 5. MAIN CONTENT CHANGES */
     .main-content {
-        width: 100%; 
-        margin-left: 0; 
-        min-height: auto; 
-        border-radius: 20px; /* Match the sidebar radius */
+        width: 100%;
+        margin-left: 0;
+        min-height: auto;
+        border-radius: 20px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
     .content-wrapper {
-        padding: 25px; 
-        overflow-y: visible; 
+        padding: 20px;
+        overflow-y: visible;
+    }
+
+    .page-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .section-heading {
+        font-size: 1.2rem;
+        margin: 30px 0 20px;
+    }
+
+    .about-intro h1 {
+        font-size: 1.4rem;
+    }
+
+    .about-intro p {
+        font-size: 0.95rem;
     }
     
     /* 6. NAVBAR & GRID ADJUSTMENTS */
@@ -758,13 +792,73 @@ body {
         overflow-x: auto;
         white-space: nowrap;
         justify-content: flex-start;
-        padding: 15px 25px;
-        margin: -25px -25px 20px; 
-        border-radius: 15px 15px 0 0;
+        padding: 15px 20px;
+        margin: -20px -20px 20px;
+        border-radius: 20px 20px 0 0;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 
-    .services-grid, .projects-grid {
-        grid-template-columns: 1fr; 
+    .top-navbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-item {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .service-box {
+        padding: 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .portfolio-filter {
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-bottom: 5px;
+    }
+
+    .portfolio-filter::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .tech-stack-grid {
+        gap: 15px;
+    }
+
+    .tech-logo-item {
+        width: 100px;
+    }
+
+    .timeline {
+        padding-left: 25px;
+    }
+
+    .timeline-item h4 {
+        font-size: 1.05rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 15px 20px;
+        font-size: 0.95rem;
     }
 }
