@@ -758,6 +758,8 @@ body {
     min-height: auto;
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow-y: visible;
+    max-height: none;
   }
 
   .content-wrapper {
@@ -788,7 +790,7 @@ body {
     white-space: nowrap;
     justify-content: flex-start;
     padding: 15px 20px;
-    margin: -20px -20px 20px;
+    margin: 0 0 20px 0;
     border-radius: 20px 20px 0 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
