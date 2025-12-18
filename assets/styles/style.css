@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Helvetica", Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   overflow-y: scroll;
@@ -275,10 +275,6 @@ body {
 
 .about-intro p {
   margin-bottom: 20px;
-}
-
-* {
-  font-family: "Helvetica", sans-serif;
 }
 
 /* Services Grid */
