@@ -340,6 +340,71 @@ body {
   line-height: 1.6;
 }
 
+/* Current Project Box */
+.current-project-box {
+  background: var(--card-bg);
+  border: 2px solid var(--accent);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 35px;
+  transition: all 0.3s;
+}
+
+.current-project-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(211, 194, 107, 0.2);
+}
+
+.project-header {
+  margin-bottom: 15px;
+}
+
+.project-badge {
+  display: inline-block;
+  background: rgba(211, 194, 107, 0.15);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.project-header h4 {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin: 10px 0 5px 0;
+}
+
+.project-tagline {
+  font-size: 1rem;
+  color: var(--accent);
+  font-style: italic;
+  margin: 0 0 15px 0;
+}
+
+.project-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-tag {
+  background: rgba(211, 194, 107, 0.1);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(211, 194, 107, 0.3);
+}
+
 .tech-stack-grid {
   display: flex;
   flex-wrap: nowrap;
@@ -831,6 +896,23 @@ body {
 
   .service-box {
     padding: 20px;
+  }
+
+  .current-project-box {
+    padding: 20px;
+  }
+
+  .project-header h4 {
+    font-size: 1.3rem;
+  }
+
+  .project-tech-tags {
+    gap: 8px;
+  }
+
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 5px 12px;
   }
 
   .projects-grid {
