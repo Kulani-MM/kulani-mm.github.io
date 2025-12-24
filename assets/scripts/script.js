@@ -150,10 +150,101 @@ function initContactForm() {
   }
 }
 
+// Theme system based on time of day
+const themes = {
+  morning: {
+    name: 'morning',
+    accent: '#f39c12', // Warm orange/amber
+    time: { start: 6, end: 12 }
+  },
+  afternoon: {
+    name: 'afternoon',
+    accent: '#3498db', // Bright blue
+    time: { start: 12, end: 18 }
+  },
+  evening: {
+    name: 'evening',
+    accent: '#d3c26b', // Gold (current/default)
+    time: { start: 18, end: 22 }
+  },
+  night: {
+    name: 'night',
+    accent: '#9b59b6', // Purple
+    time: { start: 22, end: 6 }
+  }
+};
+
+const themeOrder = ['morning', 'afternoon', 'evening', 'night'];
+let manualOverride = false;
+
+function getThemeByTime() {
+  const hour = new Date().getHours();
+
+  if (hour >= 6 && hour < 12) return themes.morning;
+  if (hour >= 12 && hour < 18) return themes.afternoon;
+  if (hour >= 18 && hour < 22) return themes.evening;
+  return themes.night;
+}
+
+function applyTheme(themeName = null) {
+  let theme;
+
+  if (themeName) {
+    // Manual selection
+    theme = themes[themeName];
+    manualOverride = true;
+    localStorage.setItem('manual-theme', themeName);
+  } else if (manualOverride) {
+    // Use saved manual theme
+    const saved = localStorage.getItem('manual-theme');
+    theme = saved ? themes[saved] : getThemeByTime();
+  } else {
+    // Auto by time
+    theme = getThemeByTime();
+  }
+
+  const root = document.documentElement;
+  root.style.setProperty('--accent', theme.accent);
+  localStorage.setItem('current-theme', theme.name);
+}
+
+function cycleTheme() {
+  const currentTheme = localStorage.getItem('current-theme') || 'evening';
+  const currentIndex = themeOrder.indexOf(currentTheme);
+  const nextIndex = (currentIndex + 1) % themeOrder.length;
+  const nextTheme = themeOrder[nextIndex];
+
+  applyTheme(nextTheme);
+}
+
+function initThemeSwitcher() {
+  const themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', cycleTheme);
+  }
+
+  // Check if user had manual override
+  const manualTheme = localStorage.getItem('manual-theme');
+  if (manualTheme) {
+    manualOverride = true;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   showTab("about");
   updateAllQuotes(true); // Skip animation on initial load
   setInterval(updateAllQuotes, 60000);
   initPortfolioFilters();
   initContactForm();
+  initThemeSwitcher();
+
+  // Apply theme on load
+  applyTheme();
+
+  // Check for theme change every minute (only if no manual override)
+  setInterval(() => {
+    if (!manualOverride) {
+      applyTheme();
+    }
+  }, 60000);
 });

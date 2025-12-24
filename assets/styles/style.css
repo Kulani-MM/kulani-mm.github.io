@@ -18,6 +18,14 @@ html {
   --text-secondary: #d1d1d1;
   --text-muted: #b8b8b8;
   --border: #3d3d40;
+
+  /* Smooth color transitions */
+  transition: --accent 1s ease;
+}
+
+/* Enable smooth transitions for accent color changes */
+* {
+  transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 body {
@@ -141,6 +149,34 @@ body {
   background: var(--accent);
   color: var(--bg);
   transform: translateY(-3px);
+}
+
+.theme-switcher {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.theme-btn {
+  width: 45px;
+  height: 45px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.2rem;
+}
+
+.theme-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .last-updated {
