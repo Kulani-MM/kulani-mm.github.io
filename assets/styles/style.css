@@ -154,6 +154,11 @@ body {
   font-size: 0.75rem;
   color: var(--text-muted);
   letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.last-updated p:last-child {
+  margin-bottom: 0;
 }
 
 /* ===== MAIN CONTENT ===== */
