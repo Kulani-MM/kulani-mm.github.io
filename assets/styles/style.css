@@ -578,6 +578,18 @@ body {
   color: var(--accent);
 }
 
+.timeline-item .achievement {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 8px;
+  padding: 4px 12px;
+  background: rgba(211, 194, 107, 0.15);
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
 /* CV Download Section Styling */
 .download-cv-section {
   text-align: left;
