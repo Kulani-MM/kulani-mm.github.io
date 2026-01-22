@@ -596,29 +596,22 @@ body {
   margin: 30px 0 20px;
 }
 
-.download-cv-btn {
-  padding: 15px 30px;
-  background: var(--accent);
-  color: var(--bg);
+.download-cv-link {
+  color: var(--text-muted);
   text-decoration: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.3s;
+  font-size: 0.95rem;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
+  gap: 8px;
+  transition: color 0.3s;
 }
 
-.download-cv-btn:hover {
-  background: #e67e22;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(241, 196, 15, 0.5);
+.download-cv-link:hover {
+  color: var(--accent);
 }
 
-.download-cv-btn i {
-  font-size: 1.1rem;
+.download-cv-link i {
+  font-size: 0.9rem;
 }
 
 /* --- PORTFOLIO FILTER BAR --- */
@@ -715,15 +708,10 @@ body {
 
 /* --- CONTACT TAB STYLING --- */
 
-.contact-map-container {
+.location-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
   margin-bottom: 30px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.contact-map-container iframe {
-  display: block;
 }
 
 .contact-form {
