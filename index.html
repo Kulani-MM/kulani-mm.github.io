@@ -1,280 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kulani John - Software Developer specializing in web development and data engineering. From accounting to code, building solutions with Python, Java, and modern web technologies.">
-  <meta name="keywords" content="Kulani John, Software Developer, Web Development, Data Engineering, Python, Java, Portfolio">
+  <meta name="description" content="kulani john — former accountant turned software techie. graduate software tester at boxfusion.">
+  <meta name="keywords" content="Kulani John, Software Developer, Software Tester, Boxfusion, Shesha, Portfolio">
   <meta name="author" content="Kulani John">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kulani-mm.github.io/">
-  <meta property="og:title" content="Kulani John | Software Developer Portfolio">
-  <meta property="og:description" content="Software Developer specializing in web development and data engineering. From accounting to code, building solutions with Python, Java, and modern web technologies.">
+  <meta property="og:title" content="kulani john">
+  <meta property="og:description" content="former accountant turned software techie. graduate software tester at boxfusion.">
   <meta property="og:image" content="https://kulani-mm.github.io/assets/images/image.jpeg">
 
-
-  <title>Kulani John</title>
-  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <title>kulani john</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>K</text></svg>">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <div class="profile-img">
-        <img src="assets/images/image.jpeg" alt="Kulani John">
-      </div>
-      <h1 class="profile-name">Kulani John</h1>
-      <p class="profile-title">Software Developer</p>
 
-      <div class="divider"></div>
+  <!-- fixed nav — always visible -->
+  <nav class="nav" id="nav">
+    <span class="nav-name">kulani john<span class="hero-dot">.</span></span>
+    <div class="nav-tabs">
+      <button class="nav-tab active" data-tab="about">about</button>
+      <button class="nav-tab" data-tab="work">work</button>
+      <button class="nav-tab" data-tab="projects">projects</button>
+      <button class="nav-tab" data-tab="contact">contact</button>
+    </div>
+    <div class="nav-social">
+      <a href="https://github.com/Kulani-MM" target="_blank" rel="noopener noreferrer">gh</a>
+      <a href="https://www.linkedin.com/in/kulani-mj/" target="_blank" rel="noopener noreferrer">li</a>
+      <a href="mailto:hello@kulani.me">@</a>
+    </div>
+  </nav>
 
-      <div class="social-links" role="navigation" aria-label="Social media links">
-        <a href="https://github.com/Kulani-MM" target="_blank" class="social-link" aria-label="GitHub profile" rel="noopener noreferrer">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/kulani-mj/" target="_blank" class="social-link" aria-label="LinkedIn profile" rel="noopener noreferrer">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:hello@kulani.me" class="social-link" aria-label="Email contact">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-        </a>
-      </div>
+  <!-- hero -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-line">kulani</span>
+        <span class="hero-line hero-line-indent">john<span class="hero-dot">.</span></span>
+      </h1>
+      <p class="hero-subtitle">software tester — aspiring engineer</p>
+    </div>
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-      <div class="theme-switcher">
-        <button id="theme-toggle" class="theme-btn" aria-label="Switch theme">
-          <i class="fas fa-palette"></i>
-        </button>
-      </div>
+  <!-- main content -->
+  <main class="main" id="main">
+    <div class="tab-body">
 
-      <div class="last-updated">
-        <p>© 2026 Kulani John</p>
-      </div>
-    </aside>
-
-    <main class="main-content">
-      <nav class="top-navbar" role="navigation" aria-label="Main navigation">
-        <button class="nav-item active" onclick="showTab('about')" aria-label="About section">About</button>
-        <button class="nav-item" onclick="showTab('resume')" aria-label="Resume section">Resume</button>
-        <button class="nav-item" onclick="showTab('portfolio')" aria-label="Portfolio section">Portfolio</button>
-        <button class="nav-item" onclick="showTab('contact')" aria-label="Contact section">Contact</button>
-      </nav>
-
-      <div class="content-wrapper">
-        <div id="about" class="tab-content active">
-          <div class="page-header">
-            <h2>About Me</h2>
-            <div class="header-line"></div>
+      <!-- about -->
+      <div class="tab-content active" id="tab-about">
+        <div class="about-grid">
+          <div class="about-photo">
+            <img src="assets/images/image.jpeg" alt="kulani john">
           </div>
-
-          <div class="about-intro">
-            <h1>Hi, <span>I'm Kulani</span></h1>
-            <p>
-              I traded spreadsheets for code at 27, quitting an accounting job after just two weeks to join WeThinkCode_. It was the scariest and best decision I've made.
+          <div class="about-text">
+            <p class="about-lead">
+              former accountant turned software techie.
             </p>
             <p>
-              Accounting taught me systems thinking and discipline. Tech gave me a way to build with it. Now I create software that solves real problems, with a focus on clean code and thoughtful design.
+              i took a leap of faith to leave accounting to join wethinkcode_, graduated with distinction. now i'm a graduate software tester at boxfusion, working on the shesha framework, with my sights set on the engineering team.
             </p>
             <p>
-              I recently completed WeThinkCode_ with distinction, and I'm now building things I care about, starting with NetWell, an app that tracks both health and the money saved from better habits.
+              i like clean code, thoughtful design, and building things that matter.
             </p>
-          </div>
-
-          <h3 class="section-heading">Currently Building</h3>
-          <div class="current-project-box">
-            <div class="project-header">
-              <span class="project-badge">⚡ In Progress</span>
-              <h4>NetWell</h4>
-              <p class="project-tagline">Your health, compounded.</p>
+            <div class="about-details">
+              <div class="detail">
+                <span class="detail-label">location</span>
+                <span class="detail-value">johannesburg</span>
+              </div>
+              <div class="detail">
+                <span class="detail-label">current role</span>
+                <span class="detail-value">graduate software tester @ boxfusion</span>
+              </div>
+              <div class="detail">
+                <span class="detail-label">education</span>
+                <span class="detail-value">b.acc — university of johannesburg</span>
+              </div>
+              <div class="detail">
+                <span class="detail-label"></span>
+                <span class="detail-value">software engineering (nqf 6) — wethinkcode_, distinction</span>
+              </div>
             </div>
-            <p class="project-description">
-              After deciding to take my health and finances seriously, I realized I needed a way to track both. NetWell helps me see the real impact of changing my habits—not just in how I feel, but in what I save. It tracks my fitness progress while also logging the money I don't spend on things like iced coffee and takeout. Every skipped temptation compounds into both better health and smarter financial decisions. Built with React Native and Apple Watch integration to make tracking effortless.
-            </p>
-            <div class="project-tech-tags">
-              <span class="tech-tag">React Native</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">HealthKit</span>
-              <span class="tech-tag">Supabase</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div id="resume" class="tab-content">
-          <div class="page-header">
-            <h2>Resume</h2>
-            <div class="header-line"></div>
-          </div>
-          <h3 class="section-heading"><i class="fas fa-briefcase"></i> Experience</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h4>Technical Mentor</h4>
-              <span class="company">WeThinkCode_</span>
-              <span class="period">Sep 2025 – Nov 2025</span>
-              <ul>
-                <li>Support onboarding by guiding mentees through environment setup and platform access within the WeThinkCode environment.</li>
-                <li>Provide technical mentorship via code pairing, reviews, and promoting software engineering best practices.</li>
-                <li>Collaborate cross-functionally with the Student Performance team to track student progress, identify blockers, and support skills development initiative.</li>
-              </ul>
-            </div>
-
-            <div class="timeline-item">
-              <h4>Property Accounts Officer</h4>
-              <span class="company">Business Partners Limited</span>
-              <span class="period">Sep 2023 – Nov 2023</span>
-            </div>
-
-            <div class="timeline-item">
-              <h4>Junior Reporting Specialist</h4>
-              <span class="company">Epiroc</span>
-              <span class="period">Dec 2022 – Sep 2023</span>
-            </div>
-
-            <div class="timeline-item">
-              <h4>Accounting Intern</h4>
-              <span class="company">Epiroc</span>
-              <span class="period">Aug 2021 – Jul 2022</span>
-            </div>
-          </div>
-
-          <h3 class="section-heading"><i class="fas fa-graduation-cap"></i> Education</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h4>Occupational Certificate in Software Engineering (NQF 6)</h4>
-              <span class="company">WeThinkCode_</span>
-              <span class="period">Sep 2024 – Dec 2025</span>
-              <p class="achievement">Pass with Distinction</p>
-            </div>
-
-            <div class="timeline-item">
-              <h4>Bachelor of Accounting (NQF 7)</h4>
-              <span class="company">University of Johannesburg</span>
-              <span class="period">Jan 2016 – Dec 2019</span>
-            </div>
-          </div>
-
-          <h3 class="section-heading">Tech Stack</h3>
-          <div class="tech-stack-grid">
-            <div class="tech-logo-item">
-              <a href="https://www.python.org/" target="_blank">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-              </a>
-            </div>
-            <div class="tech-logo-item">
-              <a href="https://www.java.com/" target="_blank">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
-              </a>
-            </div>
-            <div class="tech-logo-item">
-              <a href="https://www.mysql.com/" target="_blank">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
-              </a>
-            </div>
-            <div class="tech-logo-item">
-              <a href="https://www.postman.com/" target="_blank">
-                <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman">
-              </a>
-            </div>
-            <div class="tech-logo-item">
-              <a href="https://git-scm.com/" target="_blank">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-              </a>
-            </div>
-            <div class="tech-logo-item">
-              <a href="https://www.docker.com/" target="_blank">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-              </a>
-            </div>
-          </div>
-
-          <div class="download-cv-section">
-            <a href="assets/Kulani_John_CV.pdf" download class="download-cv-link">
-              <i class="fas fa-download"></i> Download CV
-            </a>
           </div>
         </div>
 
-        <div id="portfolio" class="tab-content">
-          <div class="page-header">
-            <h2>Portfolio</h2>
-            <div class="header-line"></div>
+        <div class="building-section">
+          <div class="building-label">currently building</div>
+          <div class="featured-project">
+            <div class="featured-tag">in progress</div>
+            <h3 class="featured-title">netwell</h3>
+            <p class="featured-tagline">your health, compounded.</p>
+            <p class="featured-description">
+              an app that tracks both fitness progress and the money saved from better habits. every skipped temptation compounds into better health and smarter financial decisions.
+            </p>
+            <div class="featured-stack">
+              <span>react native</span>
+              <span>typescript</span>
+              <span>healthkit</span>
+              <span>supabase</span>
+            </div>
           </div>
+        </div>
+      </div>
 
-          <div class="portfolio-filter" role="group" aria-label="Filter projects by category">
-            <button class="filter-btn active" data-filter="all" aria-label="Show all projects">All</button>
-            <button class="filter-btn" data-filter="data" aria-label="Show data projects">Data Projects</button>
-            <button class="filter-btn" data-filter="application" aria-label="Show applications">Applications</button>
-            <button class="filter-btn" data-filter="web" aria-label="Show web development projects">Web Development</button>
+      <!-- work -->
+      <div class="tab-content" id="tab-work">
+        <div class="experience-list">
+          <div class="exp-item">
+            <div class="exp-period">2026 — present</div>
+            <div class="exp-info">
+              <h3>graduate software tester</h3>
+              <span class="exp-company">boxfusion</span>
+              <p>testing and quality assurance on the shesha framework.</p>
+            </div>
           </div>
-
-          <div class="projects-grid">
-            <a href="https://sa-weather-dashboard.onrender.com/" target="_blank" class="project-card-v2 data" data-category="data" rel="noopener noreferrer">
-              <div class="card-image-placeholder">
-                <img src="assets/images/dash.png" alt="Screenshot of Data Dashboard Project" loading="lazy">
-              </div>
-              <div class="card-info">
-                <h3 class="card-title">Data Dashboard</h3>
-                <p class="card-category">Data Analytics</p>
-              </div>
-            </a>
-
-            <a href="https://mzansi-movie-roulette.netlify.app/" target="_blank" class="project-card-v2 application" data-category="application" rel="noopener noreferrer">
-              <div class="card-image-placeholder">
-                <img src="assets/images/movie.png" alt="Screenshot of Mzansi Movie Roulette App" loading="lazy">
-              </div>
-              <div class="card-info">
-                <h3 class="card-title">Mzansi Movie Roulette</h3>
-                <p class="card-category">Application</p>
-              </div>
-            </a>
-
-            <a href="https://rikyricktribute.netlify.app/" target="_blank" class="project-card-v2 web" data-category="web" rel="noopener noreferrer">
-              <div class="card-image-placeholder">
-                <img src="assets/images/tribute_page.png" alt="Screenshot of Tribute Page Project" loading="lazy">
-              </div>
-              <div class="card-info">
-                <h3 class="card-title">Tribute Page</h3>
-                <p class="card-category">Web Development</p>
-              </div>
-            </a>
+          <div class="exp-item">
+            <div class="exp-period">2025</div>
+            <div class="exp-info">
+              <h3>technical mentor</h3>
+              <span class="exp-company">wethinkcode_</span>
+              <p>guided mentees through onboarding, code pairing, and engineering best practices.</p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-period">2021 — 2023</div>
+            <div class="exp-info">
+              <h3>accounting roles</h3>
+              <span class="exp-company">epiroc / business partners limited</span>
+              <p>reporting, property accounts, and financial analysis. the life before code.</p>
+            </div>
           </div>
         </div>
 
-        <div id="contact" class="tab-content">
-          <div class="page-header">
-            <h2>Contact</h2>
-            <div class="header-line"></div>
+        <div class="tech-section">
+          <h3 class="tech-heading">tech i work with</h3>
+          <div class="tech-list">
+            <span>python</span>
+            <span>java</span>
+            <span>sql</span>
+            <span>git</span>
+            <span>docker</span>
+            <span>postman</span>
           </div>
+        </div>
 
-          <p class="location-text">Based in Johannesburg</p>
-          
-          <form class="contact-form" id="contactForm" action="https://formsubmit.co/hello@kulani.me" method="POST" aria-label="Contact form">
+        <div class="tech-section">
+          <h3 class="tech-heading">currently learning</h3>
+          <div class="tech-list learning">
+            <span>c#</span>
+            <span>.net</span>
+          </div>
+        </div>
+
+        <a href="assets/Kulani_John_CV.pdf" download class="cv-link">
+          <i class="fas fa-arrow-down"></i> download cv
+        </a>
+      </div>
+
+      <!-- projects -->
+      <div class="tab-content" id="tab-projects">
+        <div class="project-list">
+          <a href="https://sa-weather-dashboard.onrender.com/" target="_blank" class="project-item" rel="noopener noreferrer">
+            <div class="project-image">
+              <img src="assets/images/dash.png" alt="data dashboard" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3>data dashboard</h3>
+              <span class="project-type">data analytics</span>
+            </div>
+            <i class="fas fa-arrow-right project-arrow"></i>
+          </a>
+          <a href="https://mzansi-movie-roulette.netlify.app/" target="_blank" class="project-item" rel="noopener noreferrer">
+            <div class="project-image">
+              <img src="assets/images/movie.png" alt="mzansi movie roulette" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3>mzansi movie roulette</h3>
+              <span class="project-type">application</span>
+            </div>
+            <i class="fas fa-arrow-right project-arrow"></i>
+          </a>
+          <a href="https://rikyricktribute.netlify.app/" target="_blank" class="project-item" rel="noopener noreferrer">
+            <div class="project-image">
+              <img src="assets/images/tribute_page.png" alt="tribute page" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3>tribute page</h3>
+              <span class="project-type">web development</span>
+            </div>
+            <i class="fas fa-arrow-right project-arrow"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- contact -->
+      <div class="tab-content" id="tab-contact">
+        <div class="contact-content">
+          <h2 class="contact-heading">let's talk<span class="hero-dot">.</span></h2>
+          <p class="contact-subtext">have a project, opportunity, or just want to say hi?</p>
+
+          <form class="contact-form" id="contactForm" action="https://formsubmit.co/hello@kulani.me" method="POST">
             <input type="hidden" name="_next" value="https://kulani-mm.github.io/contact.html">
-
             <div class="form-row">
-              <input type="text" name="full_name" placeholder="Full name" required aria-label="Full name" aria-required="true">
-              <input type="email" name="email_address" placeholder="Email address" required aria-label="Email address" aria-required="true">
+              <input type="text" name="full_name" placeholder="name" required>
+              <input type="email" name="email_address" placeholder="email" required>
             </div>
-
-            <input type="text" name="subject" placeholder="Subject" required aria-label="Subject" aria-required="true">
-
-            <textarea name="message" placeholder="Your Message" rows="6" required aria-label="Message" aria-required="true"></textarea>
-
-            <button type="submit" class="send-message-btn" id="submitBtn" aria-label="Send message">
-              <i class="fas fa-paper-plane" aria-hidden="true"></i>
-              <span class="btn-text">Send Message</span>
+            <input type="text" name="subject" placeholder="subject" required>
+            <textarea name="message" placeholder="message" rows="5" required></textarea>
+            <button type="submit" class="send-btn" id="submitBtn">
+              <span class="btn-text">send message</span>
               <span class="btn-loading" style="display: none;">
-                <i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Sending...
+                <i class="fas fa-spinner fa-spin"></i> sending...
               </span>
+              <i class="fas fa-arrow-right btn-arrow"></i>
             </button>
           </form>
         </div>
       </div>
-    </main>
-  </div>
+
+    </div>
+
+    <footer class="footer">
+      <span class="footer-copy">&copy; 2026 kulani john</span>
+    </footer>
+  </main>
+
   <script src="assets/scripts/script.js"></script>
 </body>
 </html>
